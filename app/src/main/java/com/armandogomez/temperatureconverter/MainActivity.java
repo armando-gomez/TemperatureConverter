@@ -11,8 +11,6 @@ import android.text.method.ScrollingMovementMethod;
 
 import java.util.ArrayList;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 	private boolean isFahrenheit;
 	private RadioGroup rg;
@@ -21,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 	private TextView convert_label_text_view;
 	private TextView convert_degree_symbol;
 	private EditText input_edit_text;
-	private EditText convert_edit_text;
+	private TextView convert_text_view;
 	private char symbol = (char) 0x00B0;
 	private ArrayList<String> convert_history;
 	private TextView history_text_view;
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 		convert_degree_symbol = findViewById(R.id.convert_label_degree_symbol);
 
 		input_edit_text = findViewById(R.id.input_edit_text);
-		convert_edit_text = findViewById(R.id.convert_edit_text);
+		convert_text_view = findViewById(R.id.convert_text_view);
 
 		input_label_text_view.setText("Fahrenheit Degrees:");
 		convert_label_text_view.setText("Celsius Degrees:");
@@ -79,15 +77,16 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void convertTemp(View v) {
+		input_edit_text.clearFocus();
 		if(isFahrenheit) {
 			double start_temp = Double.parseDouble(input_edit_text.getText().toString());
 			double convert_temp = (start_temp - 32.0)/1.8;
-			convert_edit_text.setText(String.format("%.1f", convert_temp));
+			convert_text_view.setText(String.format("%.1f", convert_temp));
 			updateHistory(start_temp, "F", convert_temp, "C");
 		} else {
 			double start_temp = Double.parseDouble(input_edit_text.getText().toString());
 			double convert_temp = (start_temp * 1.8) + 32.0;
-			convert_edit_text.setText(String.format("%.1f", convert_temp));
+			convert_text_view.setText(String.format("%.1f", convert_temp));
 			updateHistory(start_temp, "C", convert_temp, "F");
 		}
 	}
