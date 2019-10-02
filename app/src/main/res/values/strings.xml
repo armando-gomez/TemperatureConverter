@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Converter</string>
     <string name="header_conversion">Conversion:</string>
+    <string name="header_history">Conversion History:</string>
+    <string name="radio_label_fahrenheit">Fahrenheit to Celsius</string>
+    <string name="radio_label_celsius">Celsius to Fahrenheit</string>
+    <string name="button_convert">CONVERT</string>
+    <string name="button_clear">CLEAR</string>
 </resources>
