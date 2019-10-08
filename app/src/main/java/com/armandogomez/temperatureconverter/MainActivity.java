@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 			}
 		});
-
 	}
 
 	public void convertTemp(View v) {
@@ -109,5 +108,18 @@ public class MainActivity extends AppCompatActivity {
 	public void clearHistory(View v) {
 		history_text_view.setText("");
 		convert_history = new ArrayList<>();
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		outState.putString("HISTORY", history_text_view.getText().toString());
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+		convert_history.add(savedInstanceState.getString("HISTORY"));
+		history_text_view.setText(savedInstanceState.getString("HISTORY"));
 	}
 }

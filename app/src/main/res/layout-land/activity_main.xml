@@ -15,6 +15,7 @@
         android:layout_marginEnd="228dp"
         android:text="@string/header_conversion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,11 +25,8 @@
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:checkedButton="@id/radio_fahrenheit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
@@ -48,14 +46,13 @@
         android:id="@+id/convert_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
         android:onClick="convertTemp"
         android:text="@string/button_convert"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radio_group_temperature_scales"
         app:layout_constraintTop_toBottomOf="@+id/input_frame_layout" />
 
     <Button
@@ -77,22 +74,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="591dp"
         android:text="@string/header_history"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_temperature_scales" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/input_frame_layout"
         android:layout_width="379dp"
         android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="27dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_group_temperature_scales">
+        app:layout_constraintStart_toEndOf="@+id/radio_group_temperature_scales"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/input_edit_text"
@@ -130,12 +128,11 @@
         android:id="@+id/constraintLayout"
         android:layout_width="379dp"
         android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/history_text_view"
         app:layout_constraintTop_toBottomOf="@+id/convert_button">
 
         <TextView
@@ -154,8 +151,6 @@
             android:clickable="false"
             android:editable="false"
             android:ems="10"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
             android:gravity="center_horizontal|center_vertical"
             android:inputType="numberSigned|numberDecimal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -176,19 +171,19 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="400dp"
         android:layout_marginBottom="8dp"
         android:background="#D6D7D7"
         android:gravity="left"
         android:paddingLeft="8dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/clear_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
