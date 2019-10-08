@@ -142,11 +142,19 @@
             android:id="@+id/convert_label_text_view"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBaseline_toBaselineOf="@+id/convert_edit_text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/convert_text_view"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/convert_edit_text"
+        <TextView
+            android:id="@+id/convert_label_degree_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/convert_text_view"
+            app:layout_constraintStart_toEndOf="@+id/convert_text_view" />
+
+        <TextView
+            android:id="@+id/convert_text_view"
             android:layout_width="129dp"
             android:layout_height="0dp"
             android:layout_marginStart="42dp"
@@ -161,14 +169,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/convert_label_text_view"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/convert_label_degree_symbol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/convert_edit_text"
-            app:layout_constraintStart_toEndOf="@+id/convert_edit_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
